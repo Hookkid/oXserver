@@ -1,7 +1,7 @@
 oXServer is a Python/MongoDB REST Server.
 =====================
 
-A simple CORS enabled rest server. Python and mongo are a great match because both speak json natively so there is no need for conversions when interaction with the database.
+A simple CORS enabled rest server. Python and mongo are a great match because both speak json natively so there is no need for conversions when interacting with the database.
 
 At this point we are missing the U in CRUD but updates are to be expected.
 
