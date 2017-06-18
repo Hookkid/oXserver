@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 app.config['MONGO_DBNAME'] = 'Cluster0'
-app.config['MONGO_URI'] = 'mongodb://bportela:sucess00@cluster0-shard-00-00-8gxhe.mongodb.net:27017,cluster0-shard-00-01-8gxhe.mongodb.net:27017,cluster0-shard-00-02-8gxhe.mongodb.net:27017/Cluster0?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'
+app.config['MONGO_URI'] = 'mongodb://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
 mongo = PyMongo(app)
 
