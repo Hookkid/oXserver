@@ -11,8 +11,14 @@ import env #Create your own env.py with your mongodb credencials
 app = Flask(__name__)
 CORS(app)
 
+<<<<<<< HEAD
 app.config['MONGO_DBNAME'] = env.mongoDbName
 app.config['MONGO_URI'] =  env.MongoUri
+=======
+app.config['MONGO_DBNAME'] = 'Cluster0'
+app.config['MONGO_URI'] = 'mongodb://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+>>>>>>> ac7199e6a640c2d9556deab847bd8fb928396e6c
 mongo = PyMongo(app)
 
 @app.route('/', methods=['GET'])
