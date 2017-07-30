@@ -15,13 +15,15 @@ app.config['MONGO_DBNAME'] = env.mongoDbName
 app.config['MONGO_URI'] =  env.MongoUri
 mongo = PyMongo(app)
 
-@app.route('/', methods=['GET'])
-def get_all_records():
-  result = mongo.db.stars
+@app.route('/get/<collection_name>', methods=['GET'])
+def get_all_records(collection_name):
+  result = mongo.db[collection_name]
   output = []
   for s in result.find():
-    output.append({'key': dumps(s['_id']), 'name' : s['name'], 'distance' : s['distance']})
-  return jsonify({'result' : output})
+    print(s.keys())
+    output.append({'key': dumps(s['_id']),'name': dumps(s['_id'])})
+
+  return jsonify({'result' :output})
 
 @app.route('/key/<name>', methods=['GET'])
 def get_one_record(name):
@@ -62,11 +64,13 @@ def del_record():
   return jsonify({'result' : output})
 
   ## RETRIEVEING LIST OF DBS
-@app.route('/dbs', methods=['GET'])
+@app.route('/util/dbs', methods=['GET'])
 def get_all_dbs():
-  databases = mongo.db.collection_names()
-  return jsonify({'result' : databases})
-
+  response = mongo.db.collection_names()
+  output = []
+  for s in response:
+    output.append({'key': s,'name': s})
+  return jsonify({'result' : output})
 
 
 if __name__ == '__main__':

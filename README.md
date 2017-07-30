@@ -7,6 +7,15 @@ At this point we are missing the U in CRUD but updates are to be expected.
 
 This is part of a client/server boilerplate. The client side repository is [here](https://github.com/Hookkid/oX "oX").
 
+Requirements:
+
+1. Python 
+	- pip
+		1. Flask - `sudo pip install Flask`
+		2. Flask cors - `pip install -U flask-cors`
+		2. PyMongo - `python -m pip install pymongo`
+		3. FlaskPymongo - `pip install Flask-PyMongo`
+
 The Stack:
 
 ### Client
